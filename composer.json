@@ -1,0 +1,13 @@
+{
+    "name": "happytodev/autoseed",
+    "description": "A package to automatically generate seeds files based on database structure",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HappyToDev",
+            "email": "frederic.blanc@itanea.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
