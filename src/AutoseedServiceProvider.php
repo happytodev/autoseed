@@ -14,7 +14,6 @@ class AutoseedServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->make('Happytodev\Autoseed\DbController');
     }
 
     /**
@@ -25,6 +24,5 @@ class AutoseedServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        include __DIR__ . '/routes.php';
     }
 }

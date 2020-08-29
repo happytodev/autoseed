@@ -9,6 +9,12 @@ class DatabaseTables
 {
     public $options;
 
+    /**
+     * Tables to exclude
+     *
+     * @todo integrate in a config file
+     *
+     */
     public $excludedTables;
 
     /**
@@ -36,8 +42,6 @@ class DatabaseTables
 
     public function describeTable($tableName)
     {
-        // $this->doComment('Retrieving column information for : '.$tableName);
-
         if (strlen($this->options['connection']) <= 0) {
             return DB::select(DB::raw("describe `{$tableName}`"));
         } else {
@@ -47,10 +51,11 @@ class DatabaseTables
 
     /**
      * will return an array of all table names.
+     *
+     * @return array
      */
     public function getAllTables($excludedFlag = true)
     {
-       ///ddd($this->options);
         $tables = [];
 
         if (strlen($this->options['connection']) <= 0) {
@@ -62,20 +67,14 @@ class DatabaseTables
         $tables = $tables->map(function ($value, $key) {
             return collect($value)->flatten()[0];
         })->reject(function ($value, $key) {
-            //return $value == 'migrations';
             return in_array($value, $this->excludedTables);
         });
-
-        // remove excluded tables if flag is true
-
 
         return $tables;
     }
 
     public function getSchema($tableName)
     {
-        // $this->doComment('Retrieving table definition for: '.$tableName);
-
         if (strlen($this->options['connection']) <= 0) {
             return Schema::getColumnListing($tableName);
         } else {
@@ -86,7 +85,6 @@ class DatabaseTables
     public function getColumnType($table, $column)
     {
         if (strlen($this->options['connection']) <= 0) {
-            //ddd(Schema::class);
             return Schema::getColumnType($table, $column);
         } else {
             return Schema::connection($this->options['connection'])->getColumnType($table, $column);
