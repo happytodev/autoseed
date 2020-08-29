@@ -16,5 +16,10 @@
                 "Happytodev\\Autoseed\\AutoseedServiceProvider"
             ]
         }
+    },
+    "autoload": {
+        "psr-4": {
+            "Happytodev\\Autoseed\\": "src/"
+        }
     }
 }
