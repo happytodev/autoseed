@@ -10,16 +10,16 @@
     ],
     "minimum-stability": "dev",
     "require": {},
+    "autoload": {
+        "psr-4": {
+            "Happytodev\\Autoseed\\": "src/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Happytodev\\Autoseed\\AutoseedServiceProvider"
             ]
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "Happytodev\\Autoseed\\": "src/"
         }
     }
 }
