@@ -8,9 +8,17 @@ Caution : This package is in alpha version !
 
 Autoseed is a package to provide a new artisan command :
 
+```
 php artisan autoseed:generate
+```
 
-Prior to execute this command, you have to generate your models
+Obviously, prior to execute this command, you had to set your .env with your database credentials and you have to generate your models with 
+
+```
+php artisan migrate
+```
+
+
 When it's done, you can launch the command.
 
 This package will generate for you :
@@ -21,6 +29,20 @@ This package will generate for you :
 - a call to php artisan db:seed command to generate fake datas for you
 
 This package use Faker library from François Zaninotto.
+
+## How it works
+
+Autoseed analyze your database extracts tables names and watch every fields.
+Autoseed try to associate automatically field to the good Faker data type bases on field name (ex. 'name' matches to $faker->name, 'title' matches to text(max = 50), etc.)
+
+
+## Installation
+
+You just need to launch this composer command :
+
+```
+composer require happytodev/autoseed
+```
 
 ## Limitations
 
@@ -33,5 +55,6 @@ If you want regenerate the files or use again the command, you should deletes fi
 
 - Add config files (for settings table and fieds to ignore)
 - Add parameters to determine how many items must be generated
+- More smarter with more fields describe for a good association with faker data
 - much more with your comments after use
 
