@@ -10,7 +10,11 @@
     ],
     "minimum-stability": "dev",
     "require": {},
-    "require-dev": {
-        "fzaninotto/faker": "^1.9.1"
-    }
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Happytodev\\Autoseed\\AutoseedServiceProvider"
+            ]
+        }
+    },
 }

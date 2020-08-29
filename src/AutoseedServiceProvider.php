@@ -23,6 +23,11 @@ class AutoseedServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Autoseed::class,
+                DumpAutoload::class,
+            ]);
+        }
     }
 }
