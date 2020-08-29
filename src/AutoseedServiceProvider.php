@@ -1,7 +1,8 @@
 <?php
-
 namespace Happytodev\Autoseed;
 
+use Happytodev\Autoseed\Commands\Autoseed;
+use Happytodev\Autoseed\Commands\DumpAutoload;
 use Illuminate\Support\ServiceProvider;
 
 class AutoseedServiceProvider extends ServiceProvider
