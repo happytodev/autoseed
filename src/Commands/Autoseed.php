@@ -138,10 +138,9 @@ class Autoseed extends GeneratorCommand
         $this->comment('==> Dump autoload finished !!!');
 
         // Flush the cache and optimize
-        $this->comment('==> Launch cache:clear and optimize');
-        $this->call('cache:clear');
-        $this->call('optimize');
-        $this->comment('==> cache:clear and optimize finished');
+        $this->comment('==> Launch optimize:clear');
+        $this->call('optimize:clear');
+        $this->comment('==> optimize:clear finished');
 
 
         // run php artisan db:seed
