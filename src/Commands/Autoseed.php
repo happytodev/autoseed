@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Happytodev\Autoseed\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
